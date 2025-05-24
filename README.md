@@ -32,8 +32,6 @@ vi /etc/fstab
 
 tmpfs /tmp tmpfs defaults,size=2G 0 0 # Change 2G to your desired size
 
-   
-   13  sudo yum install jenkins
 -------------------------------------
 
 # tomcatTomcat 7.0.57, 8091, "admin/admin" 
