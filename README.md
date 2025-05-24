@@ -32,6 +32,14 @@ vi /etc/fstab
 
 tmpfs /tmp tmpfs defaults,size=2G 0 0 # Change 2G to your desired size
 
+visudo  -> jenkins user 
+
+jenkins  ALL=(ALL)   NOPASSWD:ALL
+
+chown jenkins /var/run/docker
+
+chown jenkins /var/run/docker.sock
+
 -------------------------------------
 
 # tomcatTomcat 7.0.57, 8091, "admin/admin" 
@@ -41,9 +49,7 @@ build steps:
 
 mvn clean package
 
-sudo chmod 666 /var/run/docker.sock
-
- docker rm project -f
+docker rm project -f
 
 docker rmi project:1.0.0
 
