@@ -4,7 +4,15 @@ Terraform installation:
 
 sudo dnf update
 
+sudo install git maven docker -y
+   
+sudo  systemctl start docker
+     
+sudo systemctl enable docker
+
 sudo dnf install java-17-amazon-corretto -y
+
+sudo mount -o remount,size=2G /tmp
 
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
