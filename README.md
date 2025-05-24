@@ -1,18 +1,28 @@
 Jenkins installation:
 
-sudo amazon-linux-extras install java-openjdk11
+Terraform installation:
 
-sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo dnf update
 
-sudo rpm — import https://pkg.jenkins.io/redhat/jenkins.io.key
+sudo dnf install java-17-amazon-corretto -y
 
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
 
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
+sudo dnf install jenkins -y
 
-sudo yum install jenkins -y
+sudo systemctl enable jenkins
 
-sudo service jenkins start
+sudo systemctl start jenkins
+
+df -h /tmp
+
+sudo mount -o remount,size=2G /tmp
+
+vi /etc/fstab
+
+tmpfs /tmp tmpfs defaults,size=2G 0 0 # Change 2G to your desired size
 
    
    13  sudo yum install jenkins
