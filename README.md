@@ -36,16 +36,16 @@ tmpfs /tmp tmpfs defaults,size=2G 0 0 # Change 2G to your desired size
 
 # tomcatTomcat 7.0.57, 8091, "admin/admin" 
 
------------------------------------------
+
 build steps:
 
 mvn clean package
 
 sudo chmod 666 /var/run/docker.sock
 
-# docker rm project -f
+ docker rm project -f
 
-#  docker rmi project:1.0.0
+docker rmi project:1.0.0
 
 docker build -t project:1.0.0 .
 
